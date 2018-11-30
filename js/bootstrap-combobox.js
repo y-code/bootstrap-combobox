@@ -457,7 +457,7 @@
   };
 
   $.fn.combobox.defaults = {
-    bsVersion: '4'
+    bsVersion: $.fn.dropdown.Constructor.VERSION ? $.fn.dropdown.Constructor.VERSION.split('.')[0] : '2'
   , menu: '<ul class="typeahead typeahead-long dropdown-menu"></ul>'
   , item: '<li><a href="#" class="dropdown-item"></a></li>'
   , clearIfNoMatch: true
