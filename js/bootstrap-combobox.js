@@ -18,10 +18,20 @@
 
 (function( $ ) {
 
- "use strict";
+  "use strict";
 
- /* COMBOBOX PUBLIC CLASS DEFINITION
-  * ================================ */
+  /* DEPENDENCY VALIDATION AND VERSION DETECTION
+   * ============================================ */
+
+  var bsVersion = ['2'];
+  if ($.fn.dropdown) {
+    if ($.fn.dropdown.Constructor.VERSION)
+      bsVersion = $.fn.dropdown.Constructor.VERSION.split('.');
+  } else
+    throw new TypeError('Bootstrap Combobox require Bootstrap dropdown (https://getbootstrap.com/)');
+
+  /* COMBOBOX PUBLIC CLASS DEFINITION
+   * ================================ */
 
   var Combobox = function ( element, options ) {
     this.options = $.extend({}, $.fn.combobox.defaults, options);
@@ -457,7 +467,7 @@
   };
 
   $.fn.combobox.defaults = {
-    bsVersion: $.fn.dropdown.Constructor.VERSION ? $.fn.dropdown.Constructor.VERSION.split('.')[0] : '2'
+    bsVersion = bsVersion[0]
   , menu: '<ul class="typeahead typeahead-long dropdown-menu"></ul>'
   , item: '<li><a href="#" class="dropdown-item"></a></li>'
   , clearIfNoMatch: true
