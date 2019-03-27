@@ -467,7 +467,7 @@
   };
 
   $.fn.combobox.defaults = {
-    bsVersion = bsVersion[0]
+    bsVersion: bsVersion[0]
   , menu: '<ul class="typeahead typeahead-long dropdown-menu"></ul>'
   , item: '<li><a href="#" class="dropdown-item"></a></li>'
   , clearIfNoMatch: true

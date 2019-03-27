@@ -14,6 +14,9 @@
   display: none;
 }
 /* :not doesn't work in IE8 */
+.combobox-container:not(.combobox-selected) .icon-remove {
+  display: none;
+}
 .combobox-container:not(.combobox-selected) .glyphicon-remove {
   display: none;
 }
